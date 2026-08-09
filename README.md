@@ -9,10 +9,10 @@
 
 **Проект построен по гексагональной архитектуре (Ports & Adapters):**
 
-domain/ — модели и порты (интерфейсы), без зависимостей от внешних библиотек.
-application/ — use cases, работают только через порты.
-adapters/outbound/ — реализации портов: pdfplumber (PDF), pandas (леджер), Anthropic / OpenRouter / TokenRouter (LLM), JSON-файлы.
-adapters/inbound/ — CLI (run.py), собирает адаптеры и запускает use case.
+- domain/ — модели и порты (интерфейсы), без зависимостей от внешних библиотек.
+- application/ — use cases, работают только через порты.
+- adapters/outbound/ — реализации портов: pdfplumber (PDF), pandas (леджер), Anthropic / OpenRouter / TokenRouter (LLM), JSON-файлы.
+- adapters/inbound/ — CLI (run.py), собирает адаптеры и запускает use case.
 
 Любую технологию (провайдера LLM, способ парсинга PDF и т.д.) можно заменить, не трогая бизнес-логику.
 

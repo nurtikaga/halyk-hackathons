@@ -1,0 +1,9 @@
+.env
+cache/
+__pycache__/
+*.pyc
+agentic-bank-public/
+.git/
+.gitignore
+README.md
+docker-compose.yml

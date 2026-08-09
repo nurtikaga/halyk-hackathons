@@ -1,0 +1,14 @@
+# Запуск: docker compose run --rm agent
+# (или docker compose run --rm agent --dry-run для проверки без трат токенов)
+#
+# Датасет ожидается в ./agentic-bank-public рядом с этим файлом.
+# Результат появится в ./output/submission.json на хосте.
+services:
+  agent:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./agentic-bank-public:/app/data:ro   # датасет - read-only, агент его не должен менять
+      - ./output:/app/output
+      - ./cache:/app/cache                   # кэш распарсенных PDF переживает перезапуски
